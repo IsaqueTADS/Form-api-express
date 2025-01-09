@@ -14,18 +14,14 @@ function submitForm(event) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
+  }).then((response) => response.json()).then((data) => {
       const statusMessage = document.getElementById("statusMessage");
       statusMessage.style.display = "block";
       statusMessage.style.backgroundColor = "#d4edda";
       statusMessage.style.color = "#155724";
       statusMessage.innerHTML = `<strong>Sucesso:</strong> ${data.message}`;
-
-      document.getElementById("emailForm").style.display = "none";
-    })
-    .catch((error) => {
+    //   document.getElementById("emailForm").style.display = "none";
+    }).catch((error) => {
       const statusMessage = document.getElementById("statusMessage");
       statusMessage.style.display = "block";
       statusMessage.style.backgroundColor = "#f8d7da";
