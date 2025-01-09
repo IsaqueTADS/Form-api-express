@@ -1,0 +1,137 @@
+:root {
+  --primary-bg-color: #ffffff;
+  --primary-text-color: #333333;
+  --input-bg-color: #f9f9f9;
+  --input-border-color: #ccc;
+  --input-text-color: #333;
+  --button-bg-color: #4caf50;
+  --button-text-color: #ffffff;
+  --button-hover-bg-color: #45a049;
+  --status-msg-bg-color: #f0f0f0;
+  --status-msg-text-color: #333;
+}
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg-color: #333333;
+  --primary-text-color: #ffffff;
+  --input-bg-color: #444444;
+  --input-border-color: #666666;
+  --input-text-color: #fff;
+  --button-bg-color: #4caf50;
+  --button-text-color: #ffffff;
+  --button-hover-bg-color: #45a049;
+  --status-msg-bg-color: #555555;
+  --status-msg-text-color: #fff;
+  }
+} */
+
+/* body.dark {
+    --primary-bg-color: #333333;
+    --primary-text-color: #ffffff;
+    --input-bg-color: #444444;
+    --input-border-color: #666666;
+    --input-text-color: #fff;
+    --button-bg-color: #4caf50;
+    --button-text-color: #ffffff;
+    --button-hover-bg-color: #45a049;
+    --status-msg-bg-color: #555555;
+    --status-msg-text-color: #fff;
+  } */
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+}
+
+.img-form {
+  display: block;
+  max-width: 600px;
+}
+
+.title-form {
+  text-align: center;
+  grid-column: 3;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+  grid-column: 3;
+}
+
+.container-form {
+  max-width: 400px;
+  margin: auto;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: var(--input-bg-color);
+  border: 1px solid var(--input-border-color);
+  color: var(--input-text-color);
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+#statusMessage {
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--status-msg-bg-color);
+  color: var(--status-msg-text-color);
+}
+@media (max-width: 900px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  .img-form {
+    max-width: 400px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 440px) {
+  form {
+    max-width: 300px;
+  }
+  .img-form {
+    max-width: 300px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 440px) {
+  form {
+    max-width: 200px;
+  }
+  .img-form {
+    max-width: 200px;
+    margin: auto;
+  }
+}

@@ -4,26 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário de Contato</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
-    <h1>Entre em Contato</h1>
-    <form id="emailForm" action="/send_email" method="POST">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="subject">Assunto:</label>
-      <input type="text" id="subject" name="subject" required />
-
-      <label for="message">Mensagem:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-    <div id="statusMessage" style="display: none"></div>
+    <img class="img-form" src="assets/animation/forms-animate.svg" alt="">
+    <div class="container-form">
+        <h1 class="title-form">Entre em Contato</h1>
+        <form id="emailForm" action="/send_email" method="POST">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="subject">Assunto:</label>
+          <input type="text" id="subject" name="subject" required />
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+        <div id="statusMessage" style="display: none"></div>
+    </div>
     <script src="scripts/script.js"></script>
   </body>
 </html>
