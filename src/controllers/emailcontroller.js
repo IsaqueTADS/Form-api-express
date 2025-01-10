@@ -6,9 +6,7 @@ dotenv.config();
 export const sendEmail = async (req, res) => {
   const { name, email, subject, message } = req.body;
 
-  console.log({ name, email, subject, message });
-
-
+  // console.log({ name, email, subject, message });
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
