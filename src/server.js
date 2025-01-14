@@ -13,4 +13,5 @@ app.use("/", routes);
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor ouvindo a porta ${PORT}`);
+  console.log(`http://localhost:3000/`);
 });

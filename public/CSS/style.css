@@ -149,6 +149,27 @@ button:hover {
     padding: 1px;
     grid-template-rows: 1fr;
   }
+  input,
+  textarea {
+    width: 400px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--input-border-color);
+    color: var(--input-text-color);
+    border-radius: 5px;
+  }
+
+  input,
+  textarea {
+    width: 300px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--input-border-color);
+    color: var(--input-text-color);
+    border-radius: 5px;
+  }
   form {
     max-width: 300px;
   }
@@ -164,6 +185,5 @@ button:hover {
     margin: auto;
   }
   .container-form {
-
   }
 }
