@@ -8,7 +8,7 @@ function submitForm(event) {
   formData.forEach((value, key) => {
     data[key] = value;
   });
-  fetch("/send_email", {
+  fetch("https://form-api-express-4r3y.vercel.app/send_email", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
