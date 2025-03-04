@@ -9,7 +9,12 @@ app.use(express.json());
 
 // Servir arquivos estáticos da pasta "public"
 app.use(express.static("./public"));
+const router = express.Router();
 
+// Exemplo de rota GET
+router.get("/", (req, res) => {
+  res.send("Olá, o formulário está funcionando!");
+});
 // Usar as rotas definidas no arquivo send_email.js
 app.use("/", routes);
 
