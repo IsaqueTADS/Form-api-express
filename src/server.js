@@ -1,6 +1,6 @@
 import express from "express";
-import routes from "./routes/emailRoute.js";
-import { sendEmail } from "./controllers/emailcontroller.js";
+import routes from "./api/send_email.js";
+
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
