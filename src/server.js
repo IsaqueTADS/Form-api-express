@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
   res.send("Olá, o formulário está funcionando!");
 });
 // Usar as rotas definidas no arquivo send_email.js
-app.use("/", routes);
+
 
 // Definir a porta do servidor
 const PORT = process.env.PORT || 3000;
