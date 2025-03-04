@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Servir arquivos estáticos da pasta "public"
-app.use(express.static("public"));
+app.use(express.static("./public"));
 
 // Usar as rotas definidas no arquivo send_email.js
 app.use("/", routes);
