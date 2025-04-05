@@ -15,6 +15,7 @@ app.use(express.static("./public"));
 
 // Rota GET principal
 app.get("/", (req, res) => {
+  app.use(express.static("./public"));
   res.send("Olá, o formulário está funcionando!");
 });
 
