@@ -8,7 +8,7 @@ function submitForm(event) {
   formData.forEach((value, key) => {
     data[key] = value;
   });
-  fetch("/api/send_email", {
+  fetch("/send-email", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

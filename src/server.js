@@ -1,5 +1,8 @@
 import express from "express";
-import routes from "./api/send_email.js"; // Importa as rotas do arquivo send_email.js
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -9,14 +12,41 @@ app.use(express.json());
 
 // Servir arquivos estáticos da pasta "public"
 app.use(express.static("./public"));
-const router = express.Router();
 
-// Exemplo de rota GET
-router.get("/", (req, res) => {
+// Rota GET principal
+app.get("/", (req, res) => {
   res.send("Olá, o formulário está funcionando!");
 });
-// Usar as rotas definidas no arquivo send_email.js
 
+// Rota para enviar e-mail
+app.post("/send-email", async (req, res) => {
+  const { name, email, subject, message } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASSWORD,
+    },
+  });
+
+  const mailOptions = {
+    from: email,
+    to: process.env.GMAIL_USER,
+    subject: subject,
+    text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: "E-mail enviado com sucesso!" });
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ message: "Erro ao enviar o e-mail", error: error.message });
+  }
+});
 
 // Definir a porta do servidor
 const PORT = process.env.PORT || 3000;
